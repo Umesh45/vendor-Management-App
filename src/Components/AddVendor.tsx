@@ -27,7 +27,7 @@ export class AddVendor extends React.Component{
         //    vendorName: "Azure Web app 2 Service pvt ltd",
         //    emailId: "azvend56@azure.in",
         //    address: "Fifth Phase,Tower II Mumbai 456789",
-        //    status: "Active"
+        //    status: "Active"   changes
         //};
         await axios.post('https://localhost:44318/api/vendor/AddVendor', this.state.vendor)
             .then(response => {
