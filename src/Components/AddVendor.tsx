@@ -82,7 +82,9 @@ export class AddVendor extends React.Component{
                     <button type="submit">Show Vendor's details</button>
                     <br />
                 </form>
-               <button onClick={this.addVendor}>Click To Add</button>
+                <button onClick={this.addVendor}>Click To Add</button>
+                <br/><br/><br/>
+
             </>
         )
     }

@@ -1,9 +1,9 @@
 .footer {
     margin-top: 1rem;
-   
+  
     background-color: rgb(235, 195, 64);
-    position: fixed;
     bottom: 0;
+    position:fixed;
     left: 0;
     width: 100%;
 }
