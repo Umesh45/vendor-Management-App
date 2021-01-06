@@ -1,26 +1,24 @@
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import React from "react";
-import "./vendor.css";
-import { CSSTransition } from 'react-transition-group';
-
-
-
+import React from 'react';
+import './Home.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { HeaderComponent } from '../ShareComponent/Header/HeaderComponent';
 
 export class Home extends React.Component {
     render() {
         return (
             <>
-                <h1>Home</h1>
-                <h3> Welcome to Vendor Management System</h3>
-                <Router>
-                   <h4> <Link to='/vendor'>Show Vendor</Link></h4>
-                </Router>
+                <div className="container"><br /><br /><br /><br />
+                   
+                    <h1>Welcome to Vendor Management System</h1><br />
+                    <blockquote className="blockquote-reverse">
+                        <p>With the help of this application,you can add vendor,can view the list of available
+                        vendor at the required location also can do edit their details if needs to be as
+                    well as can also remove them ,if they are being deactivated or not providing services now.</p>
+                    </blockquote>
+                </div>
+                
             </>
         )
     }
 }
-
-
-
-
