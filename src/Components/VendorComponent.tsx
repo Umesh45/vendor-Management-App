@@ -27,7 +27,7 @@ export class VendorComponent extends React.Component<any, any> {
         }
         else {
             return (<>
-                <h1>Vendor Management System</h1>
+                <h1>Vendor Management System</h1><br/>
                 <div>
                     <table className='table table-striped table-responsive-sm'>
                         <thead>
@@ -37,6 +37,8 @@ export class VendorComponent extends React.Component<any, any> {
                                 <td><b>EmailId</b></td>
                                 <td><b>Address</b></td>
                                 <td><b>Status</b></td>
+                                <td><b>Edit Vendor</b></td>
+                                <td><b>Delete Vendor</b></td>
                             </tr>
                         </thead>
                         <tbody>{vendor.map((v: any,index:any) => {
@@ -47,14 +49,18 @@ export class VendorComponent extends React.Component<any, any> {
                                     <td>{v.emailId}</td>
                                     <td>{v.address}</td>
                                     <td>{v.status}</td>
+                                    <td><a href='#' className="btn btn-success">Edit</a></td>
+                                    <td><a href='#' className="btn btn-danger">Delete</a></td>
                                 </tr>
                             )
                         })}
                         </tbody>
+
                     </table>
                     <div>
                         <Router>
-                            <Link to='/addVendor'>ADD VENDOR</Link>
+                            <Link to='/addVendor' className="btn btn-primary stretched-link">ADD VENDOR</Link>
+
                             <Route path='/addVendor' component={AddVendor}/>
                         </Router>
                     </div>

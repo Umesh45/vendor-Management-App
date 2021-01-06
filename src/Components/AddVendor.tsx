@@ -43,14 +43,16 @@ export class AddVendor extends React.Component{
             <>
                 <h1>Add New Vendor </h1>
                 <form onSubmit={this.onsubmitEvent} className='form-group'>
+                    
                     <div>
-                        <label className="font-weight-bold">Vendor Id: </label>
-                            <input type='text' className='form-control'
+                        <label className='font-weight-bold'> Vendor Id: </label>
+                        <input type='text' className='form-control'
                             name='vendorId'
-                            placeholder="Enter Vendor Id"
+                            placeholder="Enter Vendor's Id"
                             onChange={this.inputEvent}
                             value={this.state.vendor.vendorId}
                         />
+
                     </div>
                     <div>
                         <label className="font-weight-bold"> Vendor Name: </label>
