@@ -4,35 +4,39 @@ import React from 'react';
 
 export class AddVendor extends React.Component{
     state = {
-        vendor: {
+        
             vendorId: '',
             vendorName: '',
             emailId: '',
             address: '',
             status: ''
-        }
+        
     }
     inputEvent = (event: any) => {
-        this.setState({ vendor: { [event.target.name]: event.target.value }} )
+        this.setState({[event.target.name]: event.target.value } )
     }
 
     onsubmitEvent = (event: any) => {
         event.preventDefault();
-        console.log(this.state.vendor)
+        console.log(this.state)
+    }
+
+    componentDidMount() {
+        axios.get('https://localhost:44318/api/vendor/getVendor')
+            .then(res => {
+                console.log(res);
+                this.setState({ vendor: res.data })
+            })
     }
 
     addVendor = async () => {
-        //const vendor2 = {
-        //    vendorId: 1018,
-        //    vendorName: "Azure Web app 2 Service pvt ltd",
-        //    emailId: "azvend56@azure.in",
-        //    address: "Fifth Phase,Tower II Mumbai 456789",
-        //    status: "Active"   changes
-        //};
-        await axios.post('https://localhost:44318/api/vendor/AddVendor', this.state.vendor)
+       
+        await axios.post('https://localhost:44318/api/vendor/AddVendor', this.state)
             .then(response => {
-                console.log(response)
-                //alert("Vendor Added Successfully")
+                console.log(response);
+                var vendor1 = this.state;
+                this.setState({vendor1 }) 
+               
             })
             .catch(error => {
                 console.error("Not Added..Try Again",error)
@@ -50,7 +54,7 @@ export class AddVendor extends React.Component{
                             name='vendorId'
                             placeholder="Enter Vendor's Id"
                             onChange={this.inputEvent}
-                            value={this.state.vendor.vendorId}
+                            value={this.state.vendorId}
                         />
 
                     </div>
@@ -60,7 +64,7 @@ export class AddVendor extends React.Component{
                             name='vendorName'
                             placeholder="Enter Vendor's Name"
                             onChange={this.inputEvent}
-                            value={this.state.vendor.vendorName}
+                            value={this.state.vendorName}
                         />
                     </div>
                     <div>
@@ -69,7 +73,7 @@ export class AddVendor extends React.Component{
                             name='emailId'
                             placeholder="Enter Vendor's EmailId"
                             onChange={this.inputEvent}
-                            value={this.state.vendor.emailId}
+                            value={this.state.emailId}
                         />
                     </div>
                     <div>
@@ -78,13 +82,23 @@ export class AddVendor extends React.Component{
                             name='address'
                             placeholder="Enter Vendor's Address"
                             onChange={this.inputEvent}
-                            value={this.state.vendor.address}
+                            value={this.state.address}
                         />
-                    </div><br/>
-                    <button type="submit">Show Vendor's details</button>
+                    </div>
+                    <div>
+                        <label className="font-weight-bold">Status:</label>
+                        <input type='text' className='form-control'
+                            name='status'
+                            placeholder="Enter Vendor's Status"
+                            onChange={this.inputEvent}
+                            value={this.state.status}
+                        />
+                    </div><br />
+                    
                     <br />
                 </form>
                 <button onClick={this.addVendor}>Click To Add</button>
+                
                 <br/><br/><br/>
 
             </>

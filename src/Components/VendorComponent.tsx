@@ -3,6 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { AddVendor } from './AddVendor';
+import { Delete } from './Delete';
 
 export class VendorComponent extends React.Component<any, any> {
     constructor(props:any) {
@@ -11,12 +12,22 @@ export class VendorComponent extends React.Component<any, any> {
             vendor: [{}]
         }
     }
-
+    
     componentDidMount() {
         axios.get('https://localhost:44318/api/vendor/getVendor')
         .then(res => {
             console.log(res);
             this.setState({ vendor: res.data })
+        })
+    }
+    deleteVendor = async (id: any, event: any) => {
+        console.log(id);
+        await axios.delete('https://localhost:44318/api/vendor/RemoveVendor?VendorId=' + id)
+            .then(res => {
+                console.log(res);
+                var vendor1 = this.state.vendor.filter((v: any) => v.vendorId != id);
+                this.setState({ vendor: vendor1 })
+
         })
     }
 
@@ -50,7 +61,12 @@ export class VendorComponent extends React.Component<any, any> {
                                     <td>{v.address}</td>
                                     <td>{v.status}</td>
                                     <td><a href='#' className="btn btn-success">Edit</a></td>
-                                    <td><a href='#' className="btn btn-danger">Delete</a></td>
+                                    <td>
+                                        <button onClick={(event: any) => this.deleteVendor(v.vendorId, event)} className=" btn btn-danger">DELETE</button>
+
+                                    </td>
+                                    
+                                    
                                 </tr>
                             )
                         })}
@@ -59,8 +75,8 @@ export class VendorComponent extends React.Component<any, any> {
                     </table>
                     <div>
                         <Router>
-                            <Link to='/addVendor' className="btn btn-primary stretched-link">ADD VENDOR</Link>
-
+                            <Link to='/addVendor' className="btn btn-primary">ADD VENDOR</Link>
+                            
                             <Route path='/addVendor' component={AddVendor}/>
                         </Router>
                     </div>
