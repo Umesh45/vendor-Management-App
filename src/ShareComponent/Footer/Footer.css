@@ -1,9 +1,10 @@
 .footer {
-    margin-top: 1rem;
-  
-    background-color: rgb(235, 195, 64);
-    bottom: 0;
     
-    left: 0;
+  margin-bottom:auto;
+    background-color: rgb(235, 195, 64);
+   
     width: 100%;
+}
+.footer p:hover {
+    color:white;
 }

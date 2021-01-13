@@ -9,11 +9,26 @@ export class HeaderComponent extends React.Component {
         return (
             <Router>
                 <nav className=" nav navbar navbar-expand-lg navbar-light bg-light navbar-nav header ">
-                    <Link to='/' className="navbar-brand">HOME</Link>&nbsp;&nbsp;
-                        <Link to='/vendor' className="navbar-brand">VENDOR</Link>&nbsp;&nbsp;
-                        <Link to='/#' className="navbar-brand">ABOUT</Link>&nbsp;&nbsp;
-                        <Link to='/#' className="navbar-brand">CONTACT</Link>
+                    <Link to='/' className="navbar-brand header1" >HOME</Link>&nbsp;&nbsp;
+                        <Link to='/vendor' className="navbar-brand header1">VENDOR</Link>&nbsp;&nbsp;
+                        <Link to='/#' className="navbar-brand header1">ABOUT</Link>&nbsp;&nbsp;
+                        <Link to='/#' className="navbar-brand header1">CONTACT</Link>
                 </nav>
+                {/* <nav>
+                    <input type="checkbox" id="check">
+                        <label for='check' className="checkbtn">
+                            <i className="fas fa-bars"></i>
+                            </label>
+                            </input>
+                    <label className='logo'>VMS</label>
+                    <ul>
+                        <li> <a href='/'>HOME</a></li>
+                        <li> <Link to='/vendor' >VENDOR</Link></li>
+                        <li> <Link to='/#' >ABOUT</Link></li>
+                        <li> <Link to='/#' >CONTACT</Link></li>
+
+                     </ul>   
+                    </nav>*/}
                 <Route path="/vendor" component={VendorComponent} />
                 <Route exact path="/" component={Home} />
             </Router>

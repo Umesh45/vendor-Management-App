@@ -7,13 +7,15 @@ import { AddVendor } from './Components/AddVendor';
 import { Home } from './Components/Home';
 import { HeaderComponent } from './ShareComponent/Header/HeaderComponent';
 import { FooterComponent } from './ShareComponent/Footer/FooterComponent';
-import { Delete } from './Components/Delete';
 
 function App() {
     return (<>
-        <div className="App">
-            <HeaderComponent />
-            <FooterComponent/>
+        <div className="App bgimage">
+           
+            {/*<FooterComponent/>*/}
+            
+                <HeaderComponent />
+                
           <header>
                 
                     {/*<nav className=" nav navbar navbar-expand-lg navbar-light bg-light navbar-nav ">

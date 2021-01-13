@@ -46,3 +46,12 @@
 .App-header{
     background-color:black !important
 }
+.bgimage {
+    background-image: url('./image/image2.jpg');
+    height: 100vh;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

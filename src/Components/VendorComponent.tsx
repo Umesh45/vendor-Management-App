@@ -3,7 +3,8 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { AddVendor } from './AddVendor';
-import { Delete } from './Delete';
+import './Home.css';
+
 
 export class VendorComponent extends React.Component<any, any> {
     constructor(props:any) {
@@ -38,11 +39,12 @@ export class VendorComponent extends React.Component<any, any> {
         }
         else {
             return (<>
+                <div className='img1'>
                 <h1>Vendor Management System</h1><br/>
                 <div>
                     <table className='table table-striped table-responsive-sm'>
                         <thead>
-                            <tr>
+                            <tr className='uppertype'>
                                 <td><b>VendorId</b></td>
                                 <td><b>VendorName</b></td>
                                 <td><b>EmailId</b></td>
@@ -60,9 +62,9 @@ export class VendorComponent extends React.Component<any, any> {
                                     <td>{v.emailId}</td>
                                     <td>{v.address}</td>
                                     <td>{v.status}</td>
-                                    <td><a href='#' className="btn btn-success">Edit</a></td>
+                                    <td><a href='#' className="btn button">Edit</a></td>
                                     <td>
-                                        <button onClick={(event: any) => this.deleteVendor(v.vendorId, event)} className=" btn btn-danger">DELETE</button>
+                                        <button onClick={(event: any) => this.deleteVendor(v.vendorId, event)} className="btn button">DELETE</button>
 
                                     </td>
                                     
@@ -80,7 +82,8 @@ export class VendorComponent extends React.Component<any, any> {
                             <Route path='/addVendor' component={AddVendor}/>
                         </Router>
                     </div>
-                </div>               
+                    </div>
+                    </div>
             </>
             );
         }
