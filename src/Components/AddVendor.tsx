@@ -4,13 +4,11 @@ import React from 'react';
 
 export class AddVendor extends React.Component{
     state = {
-        
             vendorId: '',
             vendorName: '',
             emailId: '',
             address: '',
             status: ''
-        
     }
     inputEvent = (event: any) => {
         this.setState({[event.target.name]: event.target.value } )
@@ -21,22 +19,20 @@ export class AddVendor extends React.Component{
         console.log(this.state)
     }
 
-    componentDidMount() {
+    componentDidUpdate() {
         axios.get('https://localhost:44318/api/vendor/getVendor')
             .then(res => {
+                console.log("component did update called")
                 console.log(res);
-                this.setState({ vendor: res.data })
             })
     }
 
     addVendor = async () => {
-       
         await axios.post('https://localhost:44318/api/vendor/AddVendor', this.state)
             .then(response => {
                 console.log(response);
                 var vendor1 = this.state;
-                this.setState({vendor1 }) 
-               
+                this.setState({vendor1}) 
             })
             .catch(error => {
                 console.error("Not Added..Try Again",error)

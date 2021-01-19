@@ -1,20 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import { VendorComponent } from './Components/VendorComponent';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { AddVendor } from './Components/AddVendor';
-import { Home } from './Components/Home';
+import { ErrorHandler } from './Components/ErrorHandler';
+
 import { HeaderComponent } from './ShareComponent/Header/HeaderComponent';
-import { FooterComponent } from './ShareComponent/Footer/FooterComponent';
+
 
 function App() {
     return (<>
         <div className="App bgimage">
            
             {/*<FooterComponent/>*/}
-            
+            <ErrorHandler>
                 <HeaderComponent />
+                </ErrorHandler>
                 
           <header>
                 
