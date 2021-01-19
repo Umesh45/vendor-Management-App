@@ -1,38 +1,55 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { About } from '../../Components/About';
 import { Home } from '../../Components/Home';
+import  Contact from '../../Components/Contact'
+
+
 import { VendorComponent } from '../../Components/VendorComponent';
 import './Header.css'
+import image from './vendorImage.png'
+
 
 export class HeaderComponent extends React.Component {
     render() {
         return (
             <Router>
-                <nav className=" nav navbar navbar-expand-lg navbar-light bg-light navbar-nav header ">
-                    <Link to='/' className="navbar-brand header1" >HOME</Link>&nbsp;&nbsp;
-                        <Link to='/vendor' className="navbar-brand header1">VENDOR</Link>&nbsp;&nbsp;
-                        <Link to='/#' className="navbar-brand header1">ABOUT</Link>&nbsp;&nbsp;
-                        <Link to='/#' className="navbar-brand header1">CONTACT</Link>
-                </nav>
-                {/* <nav>
-                    <input type="checkbox" id="check">
-                        <label for='check' className="checkbtn">
-                            <i className="fas fa-bars"></i>
-                            </label>
-                            </input>
-                    <label className='logo'>VMS</label>
-                    <ul>
-                        <li> <a href='/'>HOME</a></li>
-                        <li> <Link to='/vendor' >VENDOR</Link></li>
-                        <li> <Link to='/#' >ABOUT</Link></li>
-                        <li> <Link to='/#' >CONTACT</Link></li>
+               
+                <nav className="navbar navbar-expand-lg navbar-light">
+                    <a className="navbar-brand" href="/"><img src={image} /></a>
 
-                     </ul>   
-                    </nav>*/}
+                    <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                    </button>
+
+                        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                           
+                            <ul className="navbar-nav ml-auto">
+                                <li className="nav-item">
+                                    <a className="nav-link active" href="/">HOME</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/vendor">VENDOR</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/about">ABOUT</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/contact">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                </nav>
                 <Route path="/vendor" component={VendorComponent} />
                 <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/conatct" component={Contact} />
+
+
             </Router>
         )
     }
-    
+
 }

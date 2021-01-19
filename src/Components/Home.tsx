@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React from 'react';
-import './Home.css'
+import './Home.sass'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { HeaderComponent } from '../ShareComponent/Header/HeaderComponent';
 
 export class Home extends React.Component {
     render() {
+        var1: { };
         return (
             <>
-                <div className="container image"><br /><br /><br /><br />
+                <div className="content image"><br /><br /><br /><br />
 
                     <h1>Welcome to Vendor Management System</h1><br />
                     <blockquote className="blockquote-reverse">

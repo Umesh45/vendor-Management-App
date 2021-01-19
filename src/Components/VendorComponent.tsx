@@ -3,7 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { AddVendor } from './AddVendor';
-import './Home.css';
+import './Home.sass';
 
 
 export class VendorComponent extends React.Component<any, any> {
@@ -12,14 +12,20 @@ export class VendorComponent extends React.Component<any, any> {
         this.state = {
             vendor: [{}]
         }
+        axios.get('https://localhost:44318/api/vendor/getVendor')
+            .then(res => {
+                console.log(res);
+                this.setState({ vendor: res.data })
+            })
+       
     }
     
     componentDidMount() {
-        axios.get('https://localhost:44318/api/vendor/getVendor')
-        .then(res => {
-            console.log(res);
-            this.setState({ vendor: res.data })
-        })
+        //axios.get('https://localhost:44318/api/vendor/getVendor')
+        //.then(res => {
+        //    console.log(res);
+        //    this.setState({ vendor: res.data })
+        //})
     }
     deleteVendor = async (id: any, event: any) => {
         console.log(id);
@@ -28,10 +34,8 @@ export class VendorComponent extends React.Component<any, any> {
                 console.log(res);
                 var vendor1 = this.state.vendor.filter((v: any) => v.vendorId != id);
                 this.setState({ vendor: vendor1 })
-
         })
     }
-
     render() {
         var vendor = this.state.vendor
         if (vendor.length === 0) {
@@ -45,13 +49,13 @@ export class VendorComponent extends React.Component<any, any> {
                     <table className='table table-striped table-responsive-sm'>
                         <thead>
                             <tr className='uppertype'>
-                                <td><b>VendorId</b></td>
-                                <td><b>VendorName</b></td>
+                                <td><b>Id</b></td>
+                                <td><b>Name</b></td>
                                 <td><b>EmailId</b></td>
                                 <td><b>Address</b></td>
                                 <td><b>Status</b></td>
-                                <td><b>Edit Vendor</b></td>
-                                <td><b>Delete Vendor</b></td>
+                                <td><b>Edit</b></td>
+                                <td><b>Delete</b></td>
                             </tr>
                         </thead>
                         <tbody>{vendor.map((v: any,index:any) => {
@@ -65,20 +69,15 @@ export class VendorComponent extends React.Component<any, any> {
                                     <td><a href='#' className="btn button">Edit</a></td>
                                     <td>
                                         <button onClick={(event: any) => this.deleteVendor(v.vendorId, event)} className="btn button">DELETE</button>
-
                                     </td>
-                                    
-                                    
                                 </tr>
                             )
                         })}
                         </tbody>
-
                     </table>
                     <div>
                         <Router>
                             <Link to='/addVendor' className="btn btn-primary">ADD VENDOR</Link>
-                            
                             <Route path='/addVendor' component={AddVendor}/>
                         </Router>
                     </div>
