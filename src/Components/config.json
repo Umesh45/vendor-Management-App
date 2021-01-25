@@ -1,0 +1,7 @@
+{
+    "SERVER_URL" : "https://localhost:44318/api/vendor/",
+    "GET_VENDOR" : "https://localhost:44318/api/vendor/getVendor",
+    "UPDATE_VENDOR" : "https://localhost:44318/api/vendor/UpdateVendor?vendId=",
+    "DELETE_VENDOR" : "https://localhost:44318/api/vendor/RemoveVendor?VendorId=",
+    "ADD_VENDOR": "https://localhost:44318/api/vendor/AddVendor"
+}

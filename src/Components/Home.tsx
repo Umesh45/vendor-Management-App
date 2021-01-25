@@ -3,10 +3,8 @@ import React from 'react';
 import './Home.sass'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { HeaderComponent } from '../ShareComponent/Header/HeaderComponent';
-
 export class Home extends React.Component {
     render() {
-        var1: { };
         return (
             <>
                 <div className="content image"><br /><br /><br /><br />
@@ -17,6 +15,7 @@ export class Home extends React.Component {
                         vendor at the required location also can do edit their details if needs to be as
                     well as can also remove them ,if they are being deactivated or not providing services now.</p>
                     </blockquote>
+                    <h1></h1>
                 </div>
                 
             </>

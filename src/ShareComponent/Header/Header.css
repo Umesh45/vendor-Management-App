@@ -9,7 +9,7 @@
 }
 
 .navbar{
-    background-image:linear-gradient(to right,#a517ba,#5f1782);
+    background-image:linear-gradient(to right,#34495e,#34495e);
     padding:0 !important;
 }
 
@@ -33,4 +33,21 @@
     outline:none !important
 }
 
+
+.link:link,
+.link:visited{
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.4s;
+    font-weight: 700;
+}
+
+.link:hover,
+.link:active{
+    border-bottom: 2px solid #e67e22;
+    
+}
 

@@ -1,35 +1,26 @@
 import React from 'react';
-
+import {Provider} from 'react-redux';
 import './App.css';
 import { ErrorHandler } from './Components/ErrorHandler';
-
+import VendorComponent from './Components/VendorComponent';
 import { HeaderComponent } from './ShareComponent/Header/HeaderComponent';
-
+import { HeaderNew } from './ShareComponent/Header/HeaderNew';
+import store from './Redux/store'
 
 function App() {
-    return (<>
+    return (
+    <>
+    <Provider store={store}>
         <div className="App bgimage">
-           
             {/*<FooterComponent/>*/}
-            <ErrorHandler>
+                {/* <HeaderNew/> */}
+
+             <ErrorHandler>
                 <HeaderComponent />
-                </ErrorHandler>
-                
-          <header>
-                
-                    {/*<nav className=" nav navbar navbar-expand-lg navbar-light bg-light navbar-nav ">
-                    //    <Link to='/' className="navbar-brand">HOME</Link>&nbsp;&nbsp;
-                    //    <Link to='/updateVendor' className="navbar-brand">UPDATE VENDOR</Link>&nbsp;&nbsp;
-                    //    <Link to='/vendor' className="navbar-brand">AVAILABLE VENDOR</Link>&nbsp;&nbsp;
-                    //    <Link to='/addVendor' className="navbar-brand">ADD VENDOR</Link>
-                    //</nav>*/}
-                    
-                
-
-               
-          </header>
+            </ErrorHandler> 
         </div>
-    </> );
+     </Provider>
+    </> 
+    );
 }
-
 export default App;

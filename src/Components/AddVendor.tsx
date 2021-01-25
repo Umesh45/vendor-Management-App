@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 //import './AddVendor.css'
+import VendorService from './VendorService'
 
 export class AddVendor extends React.Component{
     state = {
@@ -20,7 +21,7 @@ export class AddVendor extends React.Component{
     }
 
     componentDidUpdate() {
-        axios.get('https://localhost:44318/api/vendor/getVendor')
+       VendorService.getVendor()
             .then(res => {
                 console.log("component did update called")
                 console.log(res);
@@ -28,7 +29,7 @@ export class AddVendor extends React.Component{
     }
 
     addVendor = async () => {
-        await axios.post('https://localhost:44318/api/vendor/AddVendor', this.state)
+        await VendorService.addVendor(this.state)
             .then(response => {
                 console.log(response);
                 var vendor1 = this.state;
