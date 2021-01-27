@@ -11,11 +11,6 @@ import './vendor.css'
 import VendorDemo from './VendorDemo';
 import VendorService from './VendorService'
 
-type vendor={
-    vendorId:number,
-    vendorName:string
-}
-
 class VendorComponent extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -67,7 +62,6 @@ class VendorComponent extends React.Component<any, any> {
                 this.setState({showEditVendor:false})
             })
             .catch(error=>console.log(error))
-       // axios.put(`https://localhost:44318/api/vendor/UpdateVendor?vendId=1000&vendName=Global pvt ltd`)
     }
 
     editVendor2(vendor:any,event:any){
@@ -162,7 +156,6 @@ class VendorComponent extends React.Component<any, any> {
         
     }
 }
-
 const mapStateToProps=(state:any)=>({
     vendor: state.vendor,
     name:state.name

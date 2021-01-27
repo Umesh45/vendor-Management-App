@@ -7,7 +7,7 @@ import './Home.sass';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getVendor,getSimpleName} from '../Redux/Action/postAction'; 
-import './vendor.css'
+import './vendor.css';
 
 
 class VendorDemo extends React.Component<any,any>{

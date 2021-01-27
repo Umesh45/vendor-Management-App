@@ -1,0 +1,10 @@
+.font-color{
+    color: white !important
+}
+
+.bottom-line{
+    border-bottom: 2px solid orange ; 
+   /* // padding-bottom: 4px; */
+    margin: 4px;
+    
+}

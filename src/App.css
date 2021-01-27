@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -44,7 +45,7 @@
     background-color:black !important
 }
 .bgimage {
-    background-image: url('./image/image2.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('./image/image2.jpg');
     height: 100vh;
     width: auto;
     background-position: center;

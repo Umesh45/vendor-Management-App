@@ -43,7 +43,7 @@ export class HeaderComponent extends React.Component {
                 </ErrorHandler >
                     <Route exact path="/" component={Home} />
                     <Route exact path="/about" component={About} />
-                    <Route exact path="/conatct" component={Contact} />
+                    <Route exact path="/contact" component={Contact} />
             </Router>
         );
 }
