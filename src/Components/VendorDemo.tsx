@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { AddVendor } from './AddVendor';
+import  AddVendor  from './AddVendor';
 import './Home.sass';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';

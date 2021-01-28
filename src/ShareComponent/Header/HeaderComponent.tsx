@@ -7,6 +7,7 @@ import  VendorComponent  from '../../Components/VendorComponent';
 import './Header.css'
 import image from './vendorImage.png'
 import { ErrorHandler } from '../../Components/ErrorHandler';
+import AddVendor from '../../Components/AddVendor';
 // import './HeaderNew.css'
 
 
@@ -37,6 +38,8 @@ export class HeaderComponent extends React.Component {
                             </li>
                         </ul>
                     </div>
+                   
+
                 </nav>
                 <ErrorHandler>
                     <Route path="/vendor" component={VendorComponent} />
@@ -44,6 +47,8 @@ export class HeaderComponent extends React.Component {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/about" component={About} />
                     <Route exact path="/contact" component={Contact} />
+                    <Route path='/addVendor' component={AddVendor} />
+
             </Router>
         );
 }

@@ -1,6 +1,6 @@
 const initialstate = {
     vendor: [],
-    name:''
+    name:'',
 };
 
 const reducer=(state=initialstate,action:any)=>{
@@ -11,6 +11,25 @@ const reducer=(state=initialstate,action:any)=>{
                 ...state,
                 vendor:action.payload
             };
+        case 'ADD_VENDOR':
+            console.log("add reducer")
+            return{
+                ...state,
+                vendor:action.payload,
+            };
+
+        case 'EDIT_VENDOR':
+         console.log("edit reducer is called")
+            return{
+                ...state,
+                vendor:action.payload
+            };
+
+        case 'DELETE_VENDOR':
+            return{
+                ...state
+            };
+
         case 'SIMPLE_NAME_CHANGE':
         return{
             ...state,

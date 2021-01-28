@@ -8,7 +8,7 @@ export default class Contact extends React.Component {
         return (<>
             {/* <h1>Contact Us:- </h1>
             <img src={contact} /> */}
-
+ <div className="border1"></div>
         <section className="page-section" id="contact">
             <div className="container">
                 <div className="row justify-content-center">

@@ -1,6 +1,16 @@
 .about{
     color: white;
     margin: 4px;
-    padding: 10px !important
+    padding: 10px !important;
+    letter-spacing: 2px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif
+
 }
 
+/* .border1{
+	border-bottom: 2px solid orange;
+	width: 20%;
+	margin-top: 0 !important;
+	margin-left: auto !important ;
+	margin-right: auto !important 
+} */

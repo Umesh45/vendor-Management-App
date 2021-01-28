@@ -25,4 +25,28 @@ export function getSimpleName(){
     }
 }
 
+export function addVendor(vendor:any){
+    console.log("add action")
+    return(dispatch:any)=>{
+       VendorService.addVendor(vendor).then(res=>{
+           console.log("jhgfsdjhfsd"+res.data)
+           return (dispatch)({
+               type:'ADD_VENDOR',
+               payload:res.data
+           })
+       })
+    }
+}
+
+export function editVendor(vendorId:number,venddorName:string){
+    console.log("edit action is called")
+    return (dispatch:any)=>{
+        VendorService.editVendor(vendorId,venddorName).then(res=>{
+            return dispatch({
+                type:'EDIT_VENDOR',
+               payload:res.data
+            })
+        })
+    }
+}
 
